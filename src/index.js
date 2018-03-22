@@ -8,7 +8,7 @@ import Crawler from './Crawler';
 ReactDOM.render(
   <Router>
     <div>
-      <Route path="/" exact component={App} />
+      <Route path='/' exact component={App} />
       <Route path="/crawler" component={Crawler} />
     </div>
   </Router>,
