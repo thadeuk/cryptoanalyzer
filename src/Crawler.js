@@ -15,19 +15,21 @@ class Crawler extends Component {
     };
   }
 
-  parseBody = (body) => {
-      console.log(body);
-      var $ = (cheerio.load(body));
-      console.log($('tbody'));
-      debugger;
-  }
+  parseBody = body => {
+    console.log(body);
+    var $ = cheerio.load(body);
+    console.log($('tbody'));
+    debugger;
+  };
 
   runCrawler = () => {
     this.setState({message: 'Crawling... wait a moment...'});
     var url = 'https://cors-anywhere.herokuapp.com/' + pageToVisit;
     console.log('Visiting page ' + url);
-    fetch(url).then(res => res.text()).then(body => this.parseBody(body))
-  }
+    fetch(url)
+      .then(res => res.text())
+      .then(body => this.parseBody(body));
+  };
 
   render() {
     return (
